@@ -21,7 +21,7 @@ public class Fireball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Rigidbody2D>().velocity = Time.deltaTime * direction * speed;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Time.fixedDeltaTime * direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
