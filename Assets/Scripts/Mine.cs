@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    [SerializeField] private float explodeTime = 2;
-    [SerializeField] private float explodeForce = 100;
-    [SerializeField] private float explodeRadius = 5;
-    [SerializeField] private float damage = 50;
+    [SerializeField] private float _explodeTime = 2;
+    [SerializeField] private float _explodeForce = 100;
+    [SerializeField] private float _explodeRadius = 5;
+    [SerializeField] private float _damage = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +23,14 @@ public class Mine : MonoBehaviour
 
     private void Explode ()
     {
-        Collider2D[] enemiesColider = Physics2D.OverlapCircleAll(gameObject.transform.position, explodeRadius);
+        Collider2D[] enemiesColider = Physics2D.OverlapCircleAll(gameObject.transform.position, _explodeRadius);
         foreach (Collider2D enemyColider in enemiesColider) {
             GameObject enemyGO = enemyColider.gameObject;
             bool isEnemy = enemyGO.GetComponent<Enemy>();
             if (isEnemy)
             {
-                enemyGO.GetComponent<Health>().takeDamage(damage);
-                enemyGO.GetComponent<Rigidbody2D>().AddForce(Vector2.up * explodeForce, ForceMode2D.Impulse);
+                enemyGO.GetComponent<Health>().takeDamage(_damage);
+                enemyGO.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _explodeForce, ForceMode2D.Impulse);
             }
         }
         Destroy(gameObject);
@@ -40,7 +40,7 @@ public class Mine : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Invoke("Explode", explodeTime);
+            Invoke("Explode", _explodeTime);
         }
     }
 }

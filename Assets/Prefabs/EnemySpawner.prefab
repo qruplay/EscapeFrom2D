@@ -70,6 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d202c3de57e44bbadba0a462c6e13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 7244608489664939588}
-  enemyToSpawn: {fileID: 8321371745118325886, guid: 1b37c5f1e787f4e7bbdd753c09d3e1ba,
+  _spawnPosition: {fileID: 7244608489664939588}
+  _enemyToSpawn: {fileID: 8321371745118325886, guid: 1b37c5f1e787f4e7bbdd753c09d3e1ba,
     type: 3}

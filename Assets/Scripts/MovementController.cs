@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _jumpForce;
+    [SerializeField] private LayerMask _groundLayer;
     //Player RG
     private Rigidbody2D rg;
     private bool isOnGround = false;
@@ -22,17 +23,29 @@ public class MovementController : MonoBehaviour
         //Player movement
         float direction = Input.GetAxis("Horizontal");
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        Vector2 movement = new Vector2(direction * speed * Time.fixedDeltaTime, currentVelocity.y);
+        Vector2 movement = new Vector2(direction * _speed * Time.fixedDeltaTime, currentVelocity.y);
         rg.velocity = movement;
+
+        JumpController();
+    }
+
+    private void JumpController()
+    {
+        RaycastHit2D groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 1, _groundLayer);
+
+        isOnGround = System.Convert.ToBoolean(groundCheck.collider);
 
         //Player jump
         bool jump = Input.GetButtonDown("Jump");
+
         if (jump)
         {
             if (isOnGround)
             {
                 Jump();
-            } else if (isSecondJumpAvailable)
+                isSecondJumpAvailable = true;
+            }
+            else if (isSecondJumpAvailable)
             {
                 Jump();
                 isSecondJumpAvailable = false;
@@ -42,7 +55,7 @@ public class MovementController : MonoBehaviour
 
     private void Jump ()
     {
-        rg.AddForce(Vector2.up * jumpForce);
+        rg.AddForce(Vector2.up * _jumpForce);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

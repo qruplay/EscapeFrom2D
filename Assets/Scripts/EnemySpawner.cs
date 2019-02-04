@@ -1,19 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private Transform spawnPosition;
-    [SerializeField] private Enemy enemyToSpawn;
+    [SerializeField] private Transform _spawnPosition;
+    [SerializeField] private Enemy _enemyToSpawn;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         if (other.gameObject.tag == "Player")
         {
-            Enemy enemy = Instantiate(enemyToSpawn);
-            enemy.transform.position = spawnPosition.position;
+            Enemy enemy = Instantiate(_enemyToSpawn);
+            enemy.transform.position = _spawnPosition.position;
         }
     }
 }

@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7679fb2aa01ab4220b0f5acd5ce071f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeTime: 2
-  explodeForce: 5
-  explodeRadius: 5
-  damage: 25
+  _explodeTime: 2
+  _explodeForce: 5
+  _explodeRadius: 5
+  _damage: 50
