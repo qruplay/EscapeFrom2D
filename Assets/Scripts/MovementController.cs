@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     private Rigidbody2D rg;
     private bool isOnGround = false;
     private bool isSecondJumpAvailable = false;
+    [HideInInspector] public bool facingRight = true;
 
 
     void Start()
@@ -25,6 +26,14 @@ public class MovementController : MonoBehaviour
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         Vector2 movement = new Vector2(direction * _speed * Time.fixedDeltaTime, currentVelocity.y);
         rg.velocity = movement;
+
+        if (direction < 0 && facingRight)
+        {
+            Flip();
+        } else if (direction > 0 && !facingRight)
+        {
+            Flip();
+        }
 
         JumpController();
     }
@@ -58,21 +67,17 @@ public class MovementController : MonoBehaviour
         rg.AddForce(Vector2.up * _jumpForce);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Flip ()
     {
-        Debug.Log("Ground collision");
-        if (collision.gameObject.tag=="Ground")
+        if (facingRight)
         {
-            isOnGround = true;
-            isSecondJumpAvailable = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            facingRight = false;
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
+        else
         {
-            isOnGround = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            facingRight = true;
         }
     }
 }

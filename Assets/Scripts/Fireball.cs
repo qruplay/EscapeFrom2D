@@ -8,13 +8,24 @@ public class Fireball : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _lifetime;
     [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public bool fireRight;
     private Vector2 _direction;
 
     // Start is called before the first frame update
     void Start()
     {
         gameObject.transform.position = startPosition;
-        _direction = Vector2.right;
+
+        if (fireRight)
+        {
+            _direction = Vector2.right;
+        }
+        else
+        {
+            _direction = Vector2.left;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
         Destroy(gameObject, _lifetime);
     }
 
