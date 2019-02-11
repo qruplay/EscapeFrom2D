@@ -119,10 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 200
-  _jumpForce: 500
+  _jumpForce: 400
   _groundLayer:
     serializedVersion: 2
     m_Bits: 4096
+  facingRight: 1
 --- !u!114 &5345463645289390794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8ff9353be6d4417848c484d6103df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHP: 100
+  _maxHP: 10000
 --- !u!1 &6390334715273613582
 GameObject:
   m_ObjectHideFlags: 0

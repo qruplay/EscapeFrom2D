@@ -165,4 +165,8 @@ MonoBehaviour:
   _speed: 400
   _damage: 30
   _lifetime: 2
+  _hitLayer:
+    serializedVersion: 2
+    m_Bits: 512
   startPosition: {x: 0, y: 0, z: 0}
+  fireRight: 0

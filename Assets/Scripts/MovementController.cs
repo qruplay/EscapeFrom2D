@@ -23,8 +23,7 @@ public class MovementController : MonoBehaviour
     {
         //Player movement
         float direction = Input.GetAxis("Horizontal");
-        Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        Vector2 movement = new Vector2(direction * _speed * Time.fixedDeltaTime, currentVelocity.y);
+        Vector2 movement = new Vector2(direction * _speed * Time.fixedDeltaTime, rg.velocity.y);
         rg.velocity = movement;
 
         if (direction < 0 && facingRight)

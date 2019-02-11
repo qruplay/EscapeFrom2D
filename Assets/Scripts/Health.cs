@@ -24,5 +24,6 @@ public class Health : MonoBehaviour
     public void takeDamage (float damage)
     {
         _currentHP -= damage;
+        Debug.Log(_currentHP);
     }
 }
