@@ -54,15 +54,15 @@ public class EnemyAI : MonoBehaviour
 
     void enemyRotationContoller ()
     {
-        Debug.Log("player on right " + _isPlayerOnRight + " facing right " + _facingRight);
-        if (_isPlayerOnRight && !_facingRight)
+        bool movingRight = gameObject.GetComponent<Rigidbody2D>().velocity.x > 0;
+        if ((_isPlayerOnRight && !_facingRight) || (!ShouldEngage() && movingRight))
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            _facingRight = !_facingRight;
+            _facingRight = true;
         } else if (!_isPlayerOnRight && _facingRight)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            _facingRight = !_facingRight;
+            _facingRight = false;
         }
     }
 

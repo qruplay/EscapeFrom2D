@@ -40,18 +40,6 @@ public class Bullet : MonoBehaviour
     //Works only with single layer in LayerMask
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger Collided");
-        if (collision.gameObject.layer == Mathf.Log(_hitLayer.value, 2))
-        {
-            collision.gameObject.GetComponent<Health>().takeDamage(_damage);
-        }
-
-        Destroy(gameObject);
-    }
-
-    protected void OnColisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collided");
         if (collision.gameObject.layer == Mathf.Log(_hitLayer.value, 2))
         {
             collision.gameObject.GetComponent<Health>().takeDamage(_damage);
