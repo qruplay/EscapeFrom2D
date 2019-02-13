@@ -2590,20 +2590,5 @@ PrefabInstance:
       propertyPath: _homePosition
       value: 
       objectReference: {fileID: 2078699400}
-    - target: {fileID: 5842011841187074209, guid: 1b37c5f1e787f4e7bbdd753c09d3e1ba,
-        type: 3}
-      propertyPath: _agressionRadius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842011841187074209, guid: 1b37c5f1e787f4e7bbdd753c09d3e1ba,
-        type: 3}
-      propertyPath: _attackRadius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 790714700494090392, guid: 1b37c5f1e787f4e7bbdd753c09d3e1ba,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.37
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b37c5f1e787f4e7bbdd753c09d3e1ba, type: 3}
