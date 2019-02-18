@@ -9,7 +9,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     //Player RG
     private Rigidbody2D rg;
-    private bool isOnGround = false;
+    [HideInInspector] public bool isOnGround = false;
     private bool isSecondJumpAvailable = false;
     [HideInInspector] public bool facingRight = true;
 

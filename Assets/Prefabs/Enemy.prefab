@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 784512868603114017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.33, y: 0.383, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.32, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 784512870054143187}
   m_RootOrder: 0
@@ -92,6 +92,8 @@ GameObject:
   - component: {fileID: 784512870054143189}
   - component: {fileID: 841586936355811017}
   - component: {fileID: 5842011841187074209}
+  - component: {fileID: 1020383610}
+  - component: {fileID: 1020383611}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -192,6 +194,37 @@ MonoBehaviour:
   _enemyDamage: 10
   _bulletSpeed: 400
   _bulletLifetime: 3
+--- !u!95 &1020383610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784512870054143190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddfbf4926aec643168bec5bb4cd910f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1020383611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784512870054143190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5619d0b62c40b490296d39fdd150c7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5122825315883131644
 GameObject:
   m_ObjectHideFlags: 0
