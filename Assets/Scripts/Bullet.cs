@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     [HideInInspector] public Vector3 startPosition;
     [HideInInspector] public bool fireRight;
     protected Vector2 _direction;
+    [SerializeField] private GameObject _explosionSound;
 
     // Start is called before the first frame update
     protected void Start()
@@ -45,6 +46,7 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<Health>().takeDamage(_damage);
         }
 
+        Instantiate(_explosionSound, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

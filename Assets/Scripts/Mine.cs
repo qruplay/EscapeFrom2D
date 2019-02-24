@@ -10,6 +10,7 @@ public class Mine : MonoBehaviour
     [SerializeField] private float _damage = 50;
     [SerializeField] private float _triggerRadius = 1;
     [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private GameObject _explosionSound;
 
     void Update()
     {
@@ -31,6 +32,7 @@ public class Mine : MonoBehaviour
             enemyGO.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _explodeForce, ForceMode2D.Impulse);
         }
 
+        Instantiate(_explosionSound);
         Destroy(gameObject);
     }
 }
